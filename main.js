@@ -1,12 +1,31 @@
 const btnLogin = document.getElementById("btn-login");
-const modal = document.getElementById("modal-login");
+const modalLogin = document.getElementById("modal-login");
+const modalRegister = document.getElementById("modal-register");
 
 btnLogin.addEventListener('click', () => {
-    modal.classList.toggle("oculto")
+    modalLogin.classList.toggle("oculto")
 });
 
-modal.addEventListener('click', (evento) => {
-  if (evento.target === modal) {
-    modal.classList.add("oculto");
+modalLogin.addEventListener('click', (evento) => {
+  if (evento.target === modalLogin) {
+      modalLogin.classList.add("oculto");
   }
+});
+
+modalRegister.addEventListener('click', (evento) => {
+  if (evento.target === modalRegister) {
+      modalRegister.classList.add("oculto");
+  }
+});
+
+document.getElementById("link-registro").addEventListener('click', (evento) => {
+    evento.preventDefault();
+    modalLogin.classList.add("oculto");
+    modalRegister.classList.remove("oculto");
+});
+
+document.getElementById("link-login").addEventListener('click', (evento) => {
+    evento.preventDefault();
+    modalLogin.classList.remove("oculto");
+    modalRegister.classList.add("oculto");
 });
