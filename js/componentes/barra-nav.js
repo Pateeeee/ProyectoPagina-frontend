@@ -2,8 +2,9 @@ class BarraNav extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <div id="barra-acciones-pagina" class="barra-acciones">
-        <a href="index.html" id="btn-home" class="btn-icono">
-          <img src="img/home.svg" alt="Pagina principal" width="40" height="40">
+        <a href="./" id="btn-home" class="btn-icono">
+          <img src="img/home.svg" alt="Página principal" width="40" height="40">
+          <span class="tooltip">Página Principal</span>
         </a>
       </div>
 
