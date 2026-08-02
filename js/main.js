@@ -3,17 +3,33 @@ const modalLogin = document.getElementById("modal-login");
 const modalRegister = document.getElementById("modal-register");
 const linkRegistro = document.getElementById("link-registro");
 const linkLogin = document.getElementById("link-login");
+const btnNotis = document.getElementById("btn-notis")
+const modalNotis = document.getElementById("modal-notis")
 
-if (btnLogin && modalLogin) {
-    btnLogin.addEventListener('click', () => {
-        modalLogin.classList.toggle("oculto");
-    });
-    modalLogin.addEventListener('click', (evento) => {
-      if (evento.target === modalLogin) {
-          modalLogin.classList.add("oculto");
-      }
-    });
+function verificar(btn, modal) {
+  if (btn && modal) {
+      btn.addEventListener('click', () => {
+          modal.classList.toggle("oculto");
+      });
+      modal.addEventListener('click', (evento) => {
+        if (evento.target === modal) {
+            modal.classList.add("oculto");
+        }
+      });
+  }
 }
+
+function verificarLink(link, modal1, modal2) {
+    if (link, modal1, modal2) {
+        link.addEventListener('click', (evento) => {
+            evento.preventDefault();
+            modal1.classList.toggle("oculto");
+            modal2.classList.toggle("oculto");
+        });
+    }
+}
+
+verificar(btnLogin,modalLogin)
 
 if (modalRegister) {
   modalRegister.addEventListener('click', (evento) => {
@@ -23,18 +39,7 @@ if (modalRegister) {
   });
 }
 
-if (linkRegistro && modalLogin && modalRegister) {
-  linkRegistro.addEventListener('click', (evento) => {
-    evento.preventDefault();
-    modalLogin.classList.add("oculto");
-    modalRegister.classList.remove("oculto");
-  });
-}
+verificarLink(linkRegistro, modalLogin, modalRegister)
+verificarLink(linkLogin, modalLogin, modalRegister)
 
-if (linkLogin && modalLogin && modalRegister) {
-  linkLogin.addEventListener('click', (evento) => {
-    evento.preventDefault();
-    modalLogin.classList.remove("oculto");
-    modalRegister.classList.add("oculto");
-  });
-}
+verificar(btnNotis, modalNotis)
