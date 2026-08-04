@@ -162,4 +162,27 @@ input {
     position: fixed;
     top: 10%;
     right: 2%;
+    background: #1D192F;
+}
+
+#lista-notificaciones {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sin-notificaciones {
+    text-align: center;
+    color: rgba(255, 250, 240, 0.6);
+    font-size: 14px;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.notificacion-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 14px;
 }
